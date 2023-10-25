@@ -1,0 +1,11 @@
+# criar uma rede para os containes
+docker network create network-project
+
+# criar imagem do postgres
+docker run --name my_postgres --network network-project -e POSTGRES_USER=root -e POSTGRES_PASSWORD=ifrn.cn -e POSTGRES_DB=teste -p 5434:5432 -d postgres
+
+# criar build da imagem do back
+docker build -t calculo-agua-back .  
+
+# levantar container do back
+docker run -d -p 3000:3000 --network network-project --name back calculo-agua-back
