@@ -26,7 +26,7 @@ pool.connect((err, client, release) => {
       );
   `;
 
-  const insertData = `
+  let insertData = `
       INSERT INTO itens (idPokemon, name, imageUrl)
       VALUES
   `;
