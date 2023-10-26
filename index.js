@@ -9,7 +9,7 @@ const pool = new Pool({
   host: 'db',
   database: 'pokemons',
   password: 'pokemon', // Use a senha que você definiu anteriormente
-  port: 5434,
+  port: 5432,
 });
 
 pool.connect((err, client, release) => {
